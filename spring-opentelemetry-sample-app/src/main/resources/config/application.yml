@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: spring-opentelemetry-sample
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+        - prometheous
+  opentelemetry:
+    tracing:
+      export:
+        otlp:
+          endpoint: http://localhost:4317
+  tracing:
+    sampling:
+      probability: 1.0
